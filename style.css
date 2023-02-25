@@ -1,0 +1,475 @@
+:root{
+    --menu-bg: rgba(9,4,17);
+    --amarillo: rgb(255, 187, 0);
+    --amarillo-hover: rgb(255, 238, 193);
+    --morao: rgba(9,4,17);
+    --morao-seg: rgba(34,30,41);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+/*SELECCIONAR ALGUN TEXTO O ASI*/
+*::selection{
+    background: var(--amarillo-hover);
+    color: var(--menu-bg);
+}
+/*PRESONALIZACION DE SCROLL*/
+body::-webkit-scrollbar{
+    background: var(--morao);
+    width: .7rem;
+}
+body::-webkit-scrollbar-thumb{
+    background: var(--amarillo);
+    border-radius: .5rem;
+}
+
+section{
+    padding: 2rem 15%;
+}
+
+/*HEADER*/
+.header{
+    width: 100%;
+    padding: 1rem 4.5rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 999999999;
+    background: rgba(9, 4, 17);
+}
+.header .nav{
+    width: 100%;
+    height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: all .5s ease;
+    pointer-events: none;
+}
+.header .nav.activo{
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: auto;
+    width: 100%;
+    z-index: 9999;
+}
+.header .nav .ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header .nav .ul .li{
+    padding: 1.5rem 5rem;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+.header .nav .ul .li:hover{
+    border-bottom: .1rem solid var(--amarillo-hover);
+    transition: .5s;
+}
+.header .nav .ul .li:hover .a{
+    color: var(--amarillo-hover);
+}
+.header .nav .ul .li .a{
+    font-size: 3rem;
+    color: var(--amarillo);
+    padding: .5rem 10rem;
+}
+.header .nav .ul .li .a:hover{
+    color: var(--amarillo-hover);
+}
+.header .button{
+    border: none;
+    background: transparent;
+    cursor: pointer	;
+}
+.header .button:hover .svg{
+    color: var(--amarillo-hover);
+}
+.header .button .svg{
+    height: 3.5rem;
+    width: 3.5rem;
+    color: var(--amarillo);
+}
+/*INICIO*/
+.inicio{
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(9,4,17),rgba(9, 4, 17, 0)),url(imagen/academy-bg2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+/*MISION*/
+.mision{
+    background: var(--morao);
+}
+.mision .mision-h2{
+    text-align: center;
+    font-size: 4rem;
+    color: var(--amarillo);
+    padding: 1.5rem 2rem;
+}
+.mision .mision-content{
+    display: flex;
+    flex-direction: column;
+}
+.mision .mision-content .figure{
+    width: 100%;
+    padding: .5rem 1rem;
+}
+.mision .mision-content .figure .fig-img{
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+}
+.mision .mision-content .mision-p{
+    font-size: 2.1rem;
+    color: #fff;
+    padding: .5rem 0;
+    letter-spacing: .1rem;
+    text-align: center;
+}
+.mision .mision-content .a-figure{
+    align-self: center; /*para el contenido - flex*/
+    padding: 1rem 2rem;
+    margin: 3rem 0;
+    border: none;
+    font-size: 1.5rem;
+    color: #000;
+    border-radius: 2rem;
+    letter-spacing: .1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.5s;
+    transition-property: box-shadow;  
+    background: var(--amarillo);
+    box-shadow: 0 0 2.5rem var(--amarillo);  
+    
+}
+.mision .mision-content .a-figure:hover {
+    box-shadow: 0 0 .5rem rgb(255, 193, 24),
+    0 0 2rem rgb(255, 193, 24),
+    0 0 4rem rgb(255, 193, 24),
+    0 0 6rem rgb(255, 193, 24);
+}
+.mision .mision-content .a-figure:active {
+    transform: translate(0rem, 0.2rem);
+}
+/*DIRECTORA*/
+.directora{
+    background: var(--morao-seg);
+}
+.directora .directora-h2{
+    text-align: center;
+    font-size: 4rem;
+    color: var(--amarillo);
+    padding: 1.5rem 2rem;
+}
+.directora .directora-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.directora .directora-content .fig-directora{
+    margin: .5rem 1.5rem; 
+    width: 430rem;
+}
+.directora .directora-content .fig-directora .img-directora{
+    width: 100%;
+    object-fit: cover;
+    padding: 1rem 2rem;
+}
+.directora .directora-content .directora-p{
+    font-size: 2.1rem;
+    color: #fff;
+    padding: .5rem 1rem;
+    letter-spacing: .1rem;
+}
+.directora .directora-content .directora-p span{
+    display: block;
+    padding: 1.5rem;
+    margin: 2.5rem 0;
+    font-size: 3rem;
+    color: var(--amarillo-hover);
+}
+/*EGRESADOS*/
+.egresados{
+    background: var(--morao);
+}
+.egresados .egresados-h2{
+    text-align: center;
+    font-size: 4rem;
+    color: var(--amarillo);
+    padding: 1.5rem 2rem;
+}
+.egresados .egre{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    padding: 1rem .5rem;
+}
+.egresados .egre .egre-content .fig{
+    width: 28rem;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.egresados .egre .egre-content .fig .img{
+    width: 100%;
+    box-shadow: 0 0 1.5rem var(--amarillo);  
+    transition: .4s ease;
+}
+.egresados .egre .egre-content .fig .img:hover{
+    box-shadow: 0 0 2.5rem rgb(255, 197, 39);
+}
+.egresados .egre .egre-content .egre-h{
+    color: var(--amarillo-hover);
+    padding: 1.8rem 0;
+    text-transform: uppercase;
+    font-size: 2.3rem;
+    letter-spacing: .1rem;
+    text-align: center;
+}
+.egresados .egre .egre-content .egre-p{
+    color: #fff;
+    font-size: 1.8rem;
+    letter-spacing: .1rem;
+    padding: 2rem 0;
+    padding-right: 1rem;
+    display: block;
+    width: 30rem;
+}
+/*ESTUDIANTES*/
+.estudiantes{
+    background: var(--morao);
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+}
+.estudiantes .estudiantes-h2{
+    text-align: center;
+    font-size: 4rem;
+    color: var(--amarillo);
+    padding: 1.5rem 2rem;
+    padding-bottom: 2rem;
+}
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 50rem;
+    height: 50rem;
+    padding-top: 4rem;
+    background: rgba(41, 41, 41, 0.2);
+    border-radius: 2rem;
+    box-shadow: .2rem .2rem .5rem rgba(0, 0, 0, 0.473);
+    border-top: .1rem solid rgba(255,255,255,0.5);
+    border-left: .1rem solid rgba(255,255,255,0.5);
+}
+.swiper-slide img {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+.p-swiper{
+    font-size: 2.2rem;
+    text-align: center;
+    color: var(--amarillo-hover);
+    padding-top: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+/*ACTIVIDADES*/
+.actividades{
+    background: var(--morao-seg);
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+}
+.actividades .actividades-h2{
+    text-align: center;
+    font-size: 4rem;
+    color: var(--amarillo);
+    padding: 1.5rem 2rem;
+    padding-bottom: 2rem;
+}
+.actividades .ac-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.actividades .ac-content .cont-card{
+    background: var(--morao);
+    margin: 2rem 0;
+    width: 80rem;
+    height: auto;
+}
+.actividades .ac-content .cont-card:hover{
+    box-shadow: 0 0 1.5rem var(--amarillo-hover);
+    transition: .4s;
+}
+.actividades .ac-content .cont-card .card-fig{
+    width: 80rem;
+}
+.actividades .ac-content .cont-card .card-fig .img-card{
+    width: 100%;
+}
+.actividades .ac-content .cont-card .h2{
+    font-size: 3rem;
+    color: var(--amarillo-hover);
+    padding: 2rem;
+}
+.actividades .ac-content .cont-card .p{
+    font-size: 1.8rem;
+    color: #fff;
+    padding: 0 2rem 2rem 2rem;
+}
+/*FOOTER*/
+.footer{
+    background: rgb(4, 2, 8);
+    text-align: center;
+    padding: 2rem 15%;
+}
+.footer .f-img-log .a{
+    width: 15rem;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+.footer .f-img-log .a .img{
+    width: 100%;
+}
+.footer .f-p-log{
+    margin-top: 1rem;
+    padding: 1rem;
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+/*MEDIAS*/
+
+@media screen and (max-width:1350px){
+    html{
+        font-size: 57%;
+    }
+    body{
+        overflow: hidden;
+    }
+    .header .button .svg{
+        width: 4rem;
+        height: 4rem;
+    }
+}
+@media screen and (max-width:1220px){
+    html{
+        font-size: 52%;
+    }
+    body{
+        overflow: hidden;
+    }
+}
+@media screen and (max-width:1125px){
+    html{
+        font-size: 48%;
+    }
+    body{
+        overflow: hidden;
+    }
+}
+@media screen and (max-width:1040px){
+    body{
+        overflow: hidden;
+    }
+    .egresados .egre .egre-content .fig{
+        width: 22rem;
+        height: auto;
+    }
+}
+@media screen and (max-width:960px){
+    body{
+        overflow: hidden;
+    }
+    .directora .directora-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .directora .directora-content .fig-directora{
+        width: 40rem;
+    }
+    .egresados .egre{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .egresados .egre .egre-content .egre-p{
+        padding: 1rem;
+    }
+}
+@media screen and (max-width:780px){
+    body{
+        overflow: hidden;
+    }
+    .actividades .ac-content .cont-card{
+        width: 60rem;
+        height: auto;
+    }
+    .actividades .ac-content .cont-card .card-fig{
+        width: 60rem;
+    }
+}
+@media screen and (max-width:650px){
+    body{
+        overflow: hidden;
+    }
+    html{
+        font-size: 42%;
+    }
+    .swiper-slide {
+        width: 40rem;
+        height: 40rem;
+    }
+    .actividades .ac-content .cont-card{
+        width: 50rem;
+        height: auto;
+    }
+    .actividades .ac-content .cont-card .card-fig{
+        width: 50rem;
+    }
+}
+@media screen and (max-width:470px){
+    body{
+        overflow: hidden;
+    }
+    .swiper-slide {
+        width: 30rem;
+        height: 30rem;
+    }
+    .swiper-slide img {
+        display: block;
+        margin: 0 auto;
+        width: 75%;
+    }
+    .p-swiper{
+        font-size: 1.5rem;
+        letter-spacing: .1rem;
+    }
+    .actividades .ac-content .cont-card{
+        width: 40rem;
+        height: auto;
+    }
+    .actividades .ac-content .cont-card .card-fig{
+        width: 40rem;
+    }
+}   
